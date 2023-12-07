@@ -1,0 +1,207 @@
+@use "vars" as *;
+
+.sec-content{
+	padding: 0 0 100px;
+	@include mq(){
+		padding: 0 0 50px;
+	}
+}
+.mv-img{
+	img{
+		width: 100%;
+		@include mq(){
+			min-height: 300px;
+			@include ob;
+		}
+	}
+}
+.content-heading{
+	display: block;
+	text-align: center;
+	@include font-size(30);
+	line-height: 1.4;
+	font-weight: bold;
+	color: white;
+	background: $red;
+	padding: 15px;
+	@include mq(){
+		@include font-size(24);
+	}
+}
+.block-content{
+	@include font-size(16);
+	padding: 80px 0;
+	@include mq(){
+		padding: 50px 0;
+		@include font-size(14);
+	}
+	&__item{
+		position: relative;
+		border: 1px solid #ccc;
+		background: white;
+		padding: 20px;
+		margin-bottom: 70px;
+		@include mq(){
+			padding: 20px 15px;
+			margin-bottom: 60px;
+		}
+		&:after{
+			content: "";
+			width: 20px;
+			height: 45px;
+			background: url(../img/arrow-dow.png) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			top: calc(100% + 15px);
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			@include mq(){
+				width: 15px;
+				height: 34px;
+			}
+		}
+		&:last-child{
+			margin-bottom: 0;
+			&:after {
+				display: none;
+			}
+		}
+	}
+	&__ttl{
+		display: block;
+		@include font-size(26);
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 20px;
+		@include mq(){
+			@include font-size(20);
+		}
+		span{
+			background-image: -o-linear-gradient(left, #f1f13e 50%, transparent 50%);
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #f1f13e), color-stop(50%, transparent));
+			background-image: linear-gradient(to right, #f1f13e 50%, transparent 50%);
+			background-size: 200% 18px;
+			background-repeat: no-repeat;
+			background-position: 0 18px;
+		}
+	}
+	ul{
+		max-width: 500px;
+		margin: 0 auto;
+		li{
+			position: relative;
+			padding: 0 0 0 20px;
+			margin-bottom: 20px;
+			@include mq(){
+				margin-bottom: 15px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			&:before{
+				content: "";
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: $red;
+				position: absolute;
+				top: 7px;
+				left: 0;
+				@include mq(){
+					top: 5px;
+				}
+			}
+		}
+	}
+}
+
+.block-logo{
+	margin-bottom: 80px;
+	@include mq(){
+		margin-bottom: 40px;
+	}
+	&__list{
+		@include flex(center,center,wrap);
+		li{
+			width: 33.333%;
+		}
+	}
+}
+
+.block-contact{
+	@include font-size(16);
+	margin-bottom: 100px;
+	@include mq(){
+		@include font-size(14);
+		margin-bottom: 50px;
+	}
+	&__item{
+		@include flex(0,0,wrap);
+		margin-bottom: 30px;
+		@include mq(){
+			margin-bottom: 15px;
+		}
+		dt{
+			width: 200px;
+			font-weight: bold;
+			position: relative;
+			padding-top: 8px;
+			@include mq(){
+				width: 100%;
+				margin-bottom: 10px;
+			}
+			span{
+				@include font-size(12);
+				line-height: 1;
+				background: $red;
+				color: white;
+				padding: 5px 10px;
+				position: absolute;
+				top: 10px;
+				right: 0;
+				@include mq(){
+					@include font-size(10);
+				}
+			}
+		}
+		dd{
+			width: calc(100% - 200px);
+			padding: 0 0 0 15px;
+			@include mq(){
+				width: 100%;
+				padding: 0;
+			}
+		}
+	}
+	&__check{
+		@include flex(center,center,wrap);
+		margin-bottom: 50px;
+		@include mq(){
+			margin-bottom: 30px;
+		}
+	}
+	&__sub{
+		@include flex(center,center,wrap);
+	}
+}
+.error{
+	display: block;
+	color: $red;
+	padding-top: 5px;
+}
+
+.block-note{
+	padding: 30px 15px;
+	border: 1px solid #ccc;
+	overflow-y: scroll;
+	max-height: 400px;
+	font-weight: 400;
+	@include mq(){
+		max-height: 250px;
+		padding: 15px;
+	}
+	p{
+		margin-bottom: 15px;
+	}
+}

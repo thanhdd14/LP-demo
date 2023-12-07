@@ -1,0 +1,47 @@
+@use "vars" as *;
+
+#header{
+	padding: 15px 0;
+	.inner{
+		position: relative;
+		@include flex(center,center,wrap);
+		@include mq(){
+			justify-content: space-between;
+		}
+	}
+	.header-logo{
+		position: relative;
+		z-index: 9;
+		@include mq(){
+			img{
+				width: 45px;
+			}
+		}
+	}
+	.header-link{
+
+		@include mq(md-min){
+			position: absolute;
+			@include v-align;
+			right: 15px;
+			width: 220px;
+		}
+		@include mq(){
+			width: calc(100% - 100px);
+			.c-btn{
+				margin-right: 0;
+				margin-left: auto;
+			}
+		}
+	}
+}
+
+
+.js-locked {
+	overflow: hidden;
+	-ms-touch-action: none;
+	touch-action: none;
+	body {
+		-webkit-overflow-scrolling: auto;
+	}
+}
